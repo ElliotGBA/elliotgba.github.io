@@ -1,51 +1,48 @@
-import "../App.css";
 import React from "react";
-import { Link } from "react-router-dom";
+import "../css/App.css";
 
-const links = ["home", "work", "blog", "contact"];
+const links = ["home", "expertise", "blog", "contact"];
 
-const Navbar = () => {
+const Navbar = ({ scrollToSection, refs }) => {
+    const handleLinkClick = (section) => {
+        scrollToSection(refs[`${section}Ref`]);
+    };
+
     return (
-        <div id="navbarContainer" className="flex font-mono">
+        <div id="navbarContainer" className="font-mono p-10 flex relative justify-center">
             <CreateTitle />
-            <CreateNavbarLinks />
+            <CreateNavbarLinks handleLinkClick={handleLinkClick} />
         </div>
-    )
-}
+    );
+};
 
 const CreateTitle = () => {
     return (
-        <div id="titleContainer" 
-            className="text-3xl font-bold p-7 flex 
-            hover:opacity-80 hover:cursor-pointer">
-                <div id="title"
-                    className="text-violet-400 hover:text-violet-500
-                    ease-in-out duration-200">
-                        ElliotGBA
-                </div>
-                <div id="period"
-                    className="text-white">
-                        .
-                </div>
-                <div id="underscore"
-                    className="text-violet-600 hover:text-violet-700 relative bottom-2">
-                        _
-                </div>
+        <div id="titleContainer" className="text-3xl font-bold flex absolute left-10 hover:opacity-80 hover:cursor-default">
+            <div id="title" className="text-violet-400 hover:text-violet-500 ease-in-out duration-200">
+                ElliotGBA
             </div>
+            <div id="period" className="text-white">.</div>
+            <div id="underscore" className="text-violet-600 hover:text-violet-700 relative bottom-1">_</div>
+        </div>
     );
-}
+};
 
-const CreateNavbarLinks = () => {
+const CreateNavbarLinks = ({ handleLinkClick }) => {
     return (
-        <div id="linksContainer" className="flex">
+        <div id="linksContainer" className="flex relative bottom-1 sticky">
             {links.map((x, index) => (
-                <Link to={x} key={index} className="">
-                    <div id="index" className="text-right">{"0"+(index+1)}</div>
-                    <div>{x}</div>
-                </Link>
+                <div
+                    key={index}
+                    onClick={() => handleLinkClick(x)}
+                    className="text-white mr-8 hover:opacity-70 ease-in-out duration-200 cursor-pointer"
+                >
+                    <div id="index" className="text-right text-xs">{"0" + (index + 1)}</div>
+                    <div className="text-base">// {x}</div>
+                </div>
             ))}
-        </div>    
+        </div>
     );
-}
+};
 
-export default Navbar
+export default Navbar;

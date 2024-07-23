@@ -7,9 +7,15 @@ module.exports = {
     extend: {
       fontFamily: {
         "mono": ['SFMono-Regular', 'monospace'],
-      }
+        "sans": ['Roboto', 'sans-serif']
+      },
+      fontSize: {
+        "4xl": "3rem",
+      },
+      screens: {
+        'custom': '1592px',
+      },
     },
   },
   plugins: [],
 }
-

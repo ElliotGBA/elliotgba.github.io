@@ -1,26 +1,35 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import React, { useRef } from "react";
 
-const Home = () => <div>Home Page</div>;
-const Work = () => <div>Work Page</div>;
-const Blog = () => <div>Blog Page</div>;
-const Contact = () => <div>Contact Page</div>;
+import Navbar from "./components/Navbar.js";
+import Home from "./components/Home.js";
+import Expertise from "./components/Expertise.js";
+import Blog from "./components/Blog.js";
+import Contact from "./components/Contact.js";
+import CustomCursor from "./components/CustomCursor.js";
 
 function App() {
+
+    const homeRef = useRef(null);
+    const expertiseRef = useRef(null);
+    const blogRef = useRef(null);
+    const contactRef = useRef(null);
+
+    const scrollToSection = (section) => {
+        section.current.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return (
-        <Router>
-            <div className="bg-indigo-900">
-                <Navbar />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/home" element={<Home />} />
-                    <Route path="/work" element={<Work />} />
-                    <Route path="/blog" element={<Blog />} />
-                    <Route path="/contact" element={<Contact />} />
-                </Routes>
+        <>
+            <CustomCursor />
+            <div className="bg-gradient-to-b from-slate-900 to-zinc-900">
+                <Navbar scrollToSection={scrollToSection} refs={{ homeRef, expertiseRef, blogRef, contactRef }} />
+                <div ref={homeRef}><Home /></div>
+                <div ref={expertiseRef}><Expertise /></div>
+                <div ref={blogRef}><Blog /></div>
+                <div ref={contactRef}><Contact /></div>
             </div>
-        </Router>
+        </>
+        
     );
 }
 

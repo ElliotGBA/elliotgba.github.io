@@ -1,0 +1,94 @@
+pre[class*="language-"] {
+    padding: 1em;
+    margin: 0;
+    opacity: 1; /* Full opacity for better visibility */
+    font-size: 14px;
+    overflow: auto;
+    color: #dcdcdc; /* Light text */
+    opacity: 0.2;
+    border-radius: 4px;
+}
+
+/* Line numbers */
+.token.line-number {
+    color: #5a5a5a; /* Slightly lighter gray for line numbers */
+}
+
+/* Comment */
+.token.comment {
+    color: #6a9955; /* Light green for comments */
+}
+
+/* Keyword */
+.token.keyword {
+    color: #c792ea; /* Light purple for keywords */
+}
+
+/* String */
+.token.string {
+    color: #ecc48d; /* Light orange for strings */
+}
+
+/* Function name */
+.token.function {
+    color: #82aaff; /* Light blue for function names */
+}
+
+/* Number */
+.token.number {
+    color: #f78c6c; /* Light red for numbers */
+}
+
+/* Operator */
+.token.operator {
+    color: #f78c6c; /* Light red for operators */
+}
+
+/* Punctuation */
+.token.punctuation {
+    color: #ffffff; /* White for punctuation */
+}
+
+/* Class name */
+.token.class-name {
+    color: #c792ea; /* Light purple for class names */
+}
+
+/* Tag */
+.token.tag {
+    color: #c792ea; /* Light purple for tags */
+}
+
+/* Attribute name */
+.token.attr-name {
+    color: #ffcb6b; /* Light orange for attribute names */
+}
+
+/* Variable */
+.token.variable {
+    color: #ffcb6b; /* Light orange for variables */
+}
+
+/* Function parameter */
+.token.function.parameter {
+    color: #ffcb6b; /* Light orange for function parameters */
+}
+
+/* Special keyword */
+.token.important {
+    color: #82aaff; /* Light blue for important keywords */
+}
+
+/* Keyword for special language features */
+.token.bold {
+    font-weight: bold;
+}
+
+/* Code blocks */
+code[class*="language-"] {
+    color: inherit;
+    background: none;
+    padding: 0;
+    font-size: 1em;
+    border-radius: 0;
+}
