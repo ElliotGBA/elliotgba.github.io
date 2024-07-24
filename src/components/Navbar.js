@@ -9,7 +9,7 @@ const Navbar = ({ scrollToSection, refs }) => {
     };
 
     return (
-        <div id="navbarContainer" className="font-mono p-10 flex relative justify-center">
+        <div id="navbarContainer" className="font-mono p-10 flex relative justify-center z-50">
             <CreateTitle />
             <CreateNavbarLinks handleLinkClick={handleLinkClick} />
         </div>
