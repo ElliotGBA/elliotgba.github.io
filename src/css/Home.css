@@ -24,7 +24,7 @@ button:focus {
 .square-path,
 .arrow-path {
     stroke-dasharray: 230;
-    stroke-dashoffset: 225; /* Start from fully hidden */
+    stroke-dashoffset: 225;
     animation: draw 2s ease-in-out forwards;
 }
 

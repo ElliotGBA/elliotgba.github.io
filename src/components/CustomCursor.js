@@ -1,6 +1,6 @@
 import React from "react";
 
-const useMousePosition = () => {
+const useMousePosition = async => {
     const [mousePosition, setMousePosition] = React.useState({ x: null, y: null });
 
     React.useEffect(() => {
@@ -18,7 +18,7 @@ const useMousePosition = () => {
     return mousePosition;
 };
 
-const CustomCursor = () => {
+const CustomCursor = async => {
     const { x, y } = useMousePosition();
 
     if (x === null || y === null) {

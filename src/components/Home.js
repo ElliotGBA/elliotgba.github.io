@@ -4,11 +4,11 @@ import "../css/Home.css";
 const Home = ({ scrollToSection, expertiseRef }) => {
     return (
         <>
-            <div className="relative z-10 h-[40rem] flex justify-center items-center px-4 mt-[15vh]">
+            <div className="relative z-10 h-[40rem] flex justify-center items-center px-4 mt-[32vh]">
                 <div className="text-4xl font-normal text-neutral-300 text-center mx-[25vw] leading-none mb-[20vh]">
                     <div className="text-violet-400 mb-[80px] mt-20">Hi I'm Elliot</div>
                     <span className="text-xl">
-                        I'm a web and software developer from Canada where I currently attend Dalhousie University. I love minimalist and brutalist designs.
+                        I'm a web and software developer from Canada where I currently attend Dalhousie University.
                         If I'm not programming a game or working on homework I'm more than likely snowboarding, reading or gaming. 
                     </span><br/><br/>
                     <span className="text-xl">

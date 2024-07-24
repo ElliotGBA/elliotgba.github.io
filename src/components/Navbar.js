@@ -9,7 +9,7 @@ const Navbar = ({ scrollToSection, refs }) => {
     };
 
     return (
-        <div id="navbarContainer" className="font-mono p-10 flex relative justify-center z-50">
+        <div id="navbarContainer" className="font-mono p-10 flex justify-center bg-opacity-80 bg-slate-800 z-50">
             <CreateTitle />
             <CreateNavbarLinks handleLinkClick={handleLinkClick} />
         </div>
@@ -30,7 +30,7 @@ const CreateTitle = () => {
 
 const CreateNavbarLinks = ({ handleLinkClick }) => {
     return (
-        <div id="linksContainer" className="flex relative bottom-1 sticky">
+        <div id="linksContainer" className="flex relative bottom-1">
             {links.map((x, index) => (
                 <div
                     key={index}

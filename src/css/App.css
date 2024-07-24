@@ -33,3 +33,20 @@
 .scroll-padding-top {
   scroll-padding-top: 100px;
 }
+#navbarContainer {
+  position: sticky;
+  top: 0;
+  background-color: rgba(15, 23, 42, 0);
+  backdrop-filter: blur(2px);
+  z-index: 50;
+}
+
+#linksContainer div {
+  margin-right: 8px;
+  transition: opacity 0.2s ease-in-out;
+}
+
+#linksContainer div:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
