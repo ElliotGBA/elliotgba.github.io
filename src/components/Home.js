@@ -17,6 +17,7 @@ const Home = ({ scrollToSection, expertiseRef }) => {
                     </span>
                     <div className="flex justify-center mt-[10vh]" onClick={() => scrollToSection(expertiseRef)}>
                         <svg
+                            id="svg"
                             width="60"
                             height="100"
                             viewBox="0 0 60 60"
@@ -26,22 +27,20 @@ const Home = ({ scrollToSection, expertiseRef }) => {
                         >
                             <rect
                                 x="5"
-                                y="-15"
+                                y="-5"
                                 width="50"
-                                height="80"
-                                rx="20"
+                                height="65"
+                                rx="10"
                                 stroke="#a78bfa"
                                 strokeWidth="4"
                                 fill="none"
-                                className="square-path"
                             />
                             <path
-                                d="M30 10 V35 M30 35 L25 30 M30 35 L35 30"
+                                d="M30 15 V35 M30 35 L25 30 M30 35 L35 30"
                                 stroke="#a78bfa"
                                 strokeWidth="4"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
-                                className="arrow-path"
                             />
                         </svg>
                     </div>

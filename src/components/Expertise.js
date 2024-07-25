@@ -1,6 +1,7 @@
 import React from "react";
 import CodeBackground from "./CodeBackground.js";
 import useIntersectionObserver from "./UseIntersectionObserver.js";
+import { motion } from "framer-motion";
 
 import "../css/App.css";
 
@@ -86,14 +87,16 @@ const WorkContainer = ({ id, icon, title, subtitle, color, description, classNam
     });
 
     return (
-        <div
+        <motion.div
             ref={ref}
             className={`p-[3%] text-white relative ${id !== "hidden" ? "border-2 border-white" : "border-none"}
             -mx-2 -my-2 ${className} min-w-[400px] max-w-[430px] max-h-[320px] min-h-[320px]}
             ${id === "hidden" ? 'hidden-expertise' : ''} ${isVisible ? 'visible' : ''}`}
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
         >
             <div className="flex items-center mb-2">
-                <div className="mr-3">{icon}</div>
+                <motion.div className="mr-3" whileHover={{ scale: 1.2 }}
+                    onHoverStart={ e => {} } onHoverEnd={ e => {} }>{icon}</motion.div>
                 <span className="text-3xl font-medium text-left relative">
                     <div className="relative inline-block">
                         <span className="relative z-10">{title}</span>
@@ -112,14 +115,14 @@ const WorkContainer = ({ id, icon, title, subtitle, color, description, classNam
                 </div>
                 <div className="text-gray-400 text-left">&lt;/h3&gt;</div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
 const Expertise = () => {
     return (
-        <div className="relative mt-[15vh]">
-            <div className="scroll-padding-top"></div> {/* Offset container */}
+        <div className="relative mt-[10vh]">
+            <div className="scroll-padding-top pt-20"></div>
             <CodeBackground className="relative text-center" />
             <div className="text-white text-center text-4xl font-sans mb-8 relative z-10">My Expertise</div>
             <div

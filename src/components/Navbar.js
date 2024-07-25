@@ -5,7 +5,8 @@ const links = ["home", "expertise", "blog", "contact"];
 
 const Navbar = ({ scrollToSection, refs }) => {
     const handleLinkClick = (section) => {
-        scrollToSection(refs[`${section}Ref`]);
+        const offset = section === 'home' ? 0 : -100;
+        scrollToSection(refs[`${section}Ref`], offset);
     };
 
     return (

@@ -13,12 +13,12 @@ function App() {
     const blogRef = useRef(null);
     const contactRef = useRef(null);
 
-    const scrollToSection = (section) => {
+    const scrollToSection = (section, offset = -100) => {
         if (section === homeRef) {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } else if (section.current) {
-            section.current.scrollIntoView({ behavior: 'smooth' });
-            window.scrollBy(0, -100); 
+            const yOffset = section.current.getBoundingClientRect().top + window.scrollY + offset;
+            window.scrollTo({ top: yOffset, behavior: 'smooth' });
         }
     };
 
@@ -27,9 +27,9 @@ function App() {
             <Navbar scrollToSection={scrollToSection} refs={{ homeRef, expertiseRef, blogRef, contactRef }} sticky="top" />
             <CustomCursor />
             <div className="relative min-h-screen overflow-x-hidden -top-40">
-            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-slate-900 to-zinc-900 -top-40"></div>
+                <div className="absolute inset-0 -z-10 bg-gradient-to-b from-slate-900 to-zinc-900 -top-40"></div>
                 <div className="relative z-20">
-                <BackgroundBeams className="absolute -top-[30em] left-[0vw] w-full h-full z-10 pointer-events-none" />
+                    <BackgroundBeams className="absolute -top-[30em] left-[0vw] w-full h-full z-10 pointer-events-none" />
                     <div ref={homeRef}><Home scrollToSection={scrollToSection} expertiseRef={expertiseRef} /></div>
                     <div ref={expertiseRef}><Expertise /></div>
                     <div ref={blogRef}><Blog /></div>

@@ -3,7 +3,7 @@ import "../css/custom-prism.css";
 
 const CodeBackground = () => {
     return (
-        <div className="absolute inset-0 -left-[9em] top-[5em] z-0 flex items-center justify-center">
+        <div className="absolute inset-0 -left-[9em] top-[11em] z-0 flex items-center justify-center">
             <pre className="">
                 <code className="language-html">
                     {`

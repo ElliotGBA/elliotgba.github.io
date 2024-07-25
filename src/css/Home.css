@@ -21,36 +21,14 @@ button:focus {
     position: absolute;
 }
 
-.square-path,
-.arrow-path {
-    stroke-dasharray: 230;
-    stroke-dashoffset: 225;
-    animation: draw 2s ease-in-out forwards;
+#svg {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: draw 4s ease-in-out forwards;
 }
 
-.square-path {
-    animation: draw-square 2s ease-in-out forwards;
-}
-
-.arrow-path {
-    animation: draw-arrow 2s ease-in-out forwards;
-    animation-delay: 1s;
-}
-
-@keyframes draw-square {
-    0% {
-        stroke-dashoffset: 225;
-    }
-    100% {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes draw-arrow {
-    0% {
-        stroke-dashoffset: 225;
-    }
-    100% {
+@keyframes draw {
+    to {
         stroke-dashoffset: 0;
     }
 }
