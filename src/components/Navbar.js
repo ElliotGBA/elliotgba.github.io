@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/App.css";
 
-const links = ["home", "expertise", "blog", "contact"];
+const links = ["home", "expertise", "work", "blog", "contact"];
 
 const Navbar = ({ scrollToSection, refs }) => {
     const handleLinkClick = (section) => {
