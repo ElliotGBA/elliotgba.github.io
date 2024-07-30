@@ -11,6 +11,24 @@ import { IoGameControllerOutline } from "react-icons/io5";
 import { TbMug } from "react-icons/tb";
 import { FaArrowRight } from "react-icons/fa";
 
+const Expertise = () => {
+    return (
+        <div className="relative mt-[10vh]">
+            <div className="scroll-padding-top pt-20"></div>
+            <CodeBackground className="relative text-center" />
+            <div className="text-white text-center text-4xl font-sans mb-8 relative z-10">My Expertise</div>
+            <div
+                id="workContainer"
+                className="text-center mx-[10vw] flex flex-wrap justify-center gap-4 relative z-10"
+            >
+                {expertiseData.map((expertise) => (
+                    <WorkContainer key={expertise.id} {...expertise} className={expertise.className} />
+                ))}
+            </div>
+        </div>
+    );
+};
+
 const expertiseData = [
     {
         id: "software",
@@ -116,24 +134,6 @@ const WorkContainer = ({ id, icon, title, subtitle, color, description, classNam
                 <div className="text-gray-400 text-left">&lt;/h3&gt;</div>
             </div>
         </motion.div>
-    );
-};
-
-const Expertise = () => {
-    return (
-        <div className="relative mt-[10vh]">
-            <div className="scroll-padding-top pt-20"></div>
-            <CodeBackground className="relative text-center" />
-            <div className="text-white text-center text-4xl font-sans mb-8 relative z-10">My Expertise</div>
-            <div
-                id="workContainer"
-                className="text-center mx-[10vw] flex flex-wrap justify-center gap-4 relative z-10"
-            >
-                {expertiseData.map((expertise) => (
-                    <WorkContainer key={expertise.id} {...expertise} className={expertise.className} />
-                ))}
-            </div>
-        </div>
     );
 };
 

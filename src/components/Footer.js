@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <div className="absolute text-center bg-cyan-400 w-[100%] h-[12em] -bottom-[110em]">
-            Footer
+        <div className="absolute text-center bg-slate-800 w-[100%] h-[12em]">
+            
         </div>
     )
 }

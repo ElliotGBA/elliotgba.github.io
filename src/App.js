@@ -40,7 +40,7 @@ function App() {
                     <div ref={contactRef}><Contact /></div>
                 </div>
             </div>
-            <Footer className="z-20" />
+            
         </>
     );
 }
